@@ -15,8 +15,30 @@ public class CrabWorld extends World
     
     private void prepareScene()
     {
-        // instantiate new objects
+        addPlayer();
+        addFood();
+        addEnemy();
+    }
+    private void addPlayer()
+    {
+        //instantiate new objects
+        Crab crab = new Crab( );
         
-        // add them to the world
+        // add the to the world
+        addObject(crab, 470, 100);
+        
+        
+    
+    }private void addEnemy()
+    {
+        //Temporary line for debugging
+           System.out.println("Enemy Added");
+    
+    }
+    private void addFood()
+    {
+        //Temporary line for debugging
+           System.out.println("Food Added");
+    
     }
 }
