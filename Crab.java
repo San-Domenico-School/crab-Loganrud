@@ -20,13 +20,13 @@ public class Crab extends Actor
     
     
     
-    private void storeUserInput()
+    public void act()
     {
-        
+         storeUserInput();
+         edgeFound();
     }
     
-    
-    public void act()
+    private void storeUserInput()
     {
         if(Greenfoot.isKeyDown("left"))
         {
@@ -43,11 +43,14 @@ public class Crab extends Actor
         else if(Greenfoot.isKeyDown("down"))
         {
             turn(-1);
-        } 
+        }
     }
     
-    public void faceDown()
+    private void edgeFound()
     {
-        
+        if (isAtEdge())
+        {
+            turn(180);
+        }
     }
 }

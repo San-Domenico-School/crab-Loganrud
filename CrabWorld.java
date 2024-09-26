@@ -32,13 +32,23 @@ public class CrabWorld extends World
     }private void addEnemy()
     {
         //Temporary line for debugging
-           System.out.println("Enemy Added");
+        Lobster lobster = new Lobster();
+        addObject(lobster, (int)(Math.random() * 560), (int)(Math.random() * 560));
+        
     
     }
     private void addFood()
     {
         //Temporary line for debugging
-           System.out.println("Food Added");
-    
+        Worm worm1 = new Worm();
+        addObject(worm1, (int)(Math.random() * 560), (int)(Math.random() * 560));
+        Worm worm2 = new Worm();
+        addObject(worm2, (int)(Math.random() * 560), (int)(Math.random() * 560));
+        Worm worm3 = new Worm();
+        addObject(worm3, (int)(Math.random() * 560), (int)(Math.random() * 560));
+        Worm worm4 = new Worm();
+        addObject(worm4, (int)(Math.random() * 560), (int)(Math.random() * 560));
+        Worm worm5 = new Worm();
+        addObject(worm5, (int)(Math.random() * 560), (int)(Math.random() * 560));
     }
 }
