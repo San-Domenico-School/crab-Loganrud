@@ -8,27 +8,45 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Lobster extends Actor
 {
-    /**
-     * Act - do whatever the Lobster wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    int i = 0;
     public void act()
     {
-        // Add your action code here.
+        walk();
+        edgeFound();
+        collison();
     }
     
-    private void follow()
+    private void walk()
     {
-        int followFeet = (int)(Math.random() * 200);
+        Greenfoot.setSpeed(50);
         
-        if (followFeet > 50)
+        if (i == 60)
         {
-        turn(3);
+            rotateRandom();
+            i = 0;
         }
+        move(4);
         
-        if (followFeet < 50)
+        i++;
+        
+    }
+    
+    private void rotateRandom()
+    {
+        turn((int)(100 * Math.random()-5));
+    }
+    private void edgeFound()
+    {
+        if (isAtEdge())
         {
-        
+            turn(180);
+        }
+    }
+    private void collison()
+    {
+        if (isTouching (Crab.class))
+        {
+            move(0);
         }
     }
 }

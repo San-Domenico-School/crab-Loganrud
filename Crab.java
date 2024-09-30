@@ -9,21 +9,11 @@ import greenfoot.*;
  */
 public class Crab extends Actor
 {
-    private int yPostition;
-    private int xPosition;
-    private String currentKeyPress = "no input";
-    private boolean atEdge;
-    private boolean collidePredators;
-    private boolean collideFruit;
-    
-    
-    
-    
-    
     public void act()
     {
          storeUserInput();
          edgeFound();
+         collison();
     }
     
     private void storeUserInput()
@@ -38,11 +28,11 @@ public class Crab extends Actor
         }
         else if(Greenfoot.isKeyDown("up"))
         {
-            turn(1);
+            turn(3);
         }
         else if(Greenfoot.isKeyDown("down"))
         {
-            turn(-1);
+            turn(-3);
         }
     }
     
@@ -51,6 +41,14 @@ public class Crab extends Actor
         if (isAtEdge())
         {
             turn(180);
+        }
+    }
+    
+    private void collison()
+    {
+        if (isTouching (Lobster.class))
+        {
+            getWorld().removeObject(this);
         }
     }
 }
