@@ -57,6 +57,12 @@ public class CrabWorld extends World
         addObject(worm4, (int)(Math.random() * 560), (int)(Math.random() * 560));
         Worm worm5 = new Worm();
         addObject(worm5, (int)(Math.random() * 560), (int)(Math.random() * 560));
+        Worm worm6 = new Worm();
+        addObject(worm6, (int)(Math.random() * 560), (int)(Math.random() * 560));
+        Worm worm7 = new Worm();
+        addObject(worm7, (int)(Math.random() * 560), (int)(Math.random() * 560));
+        Worm worm8 = new Worm();
+        addObject(worm8, (int)(Math.random() * 560), (int)(Math.random() * 560));
     }
     private void endGame()
     {
