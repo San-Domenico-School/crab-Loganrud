@@ -3,6 +3,7 @@ import greenfoot.*;  // (Actor, World, Greenfoot, GreenfootImage)
 public class CrabWorld extends World
 {
     private GreenfootImage youWin;
+    private GreenfootImage youLoose;
     /**
      * Create the crab world (the beach). Our world has a size 
      * of 560x560 cells, where every cell is just 1 pixel.
@@ -13,6 +14,7 @@ public class CrabWorld extends World
         super(560, 560, 1);
         prepareScene();
         youWin = new GreenfootImage("youWon.png");
+        youLoose = new GreenfootImage("youLoose.png");
     }
     public void act()
     {
@@ -60,11 +62,13 @@ public class CrabWorld extends World
     {
         if (getObjects(Crab.class).size() == 0)
         {
-            setBackground(youWin);
+            setBackground(youLoose);
             Greenfoot.stop();
         }
         if (getObjects(Worm.class).size() == 0)
         {
+            setBackground(youWin);
+            Greenfoot.playSound("fanfare.wav");
             Greenfoot.stop();
         }
     }

@@ -21,6 +21,7 @@ public class Worm extends Actor
     {
         if (isTouching (Crab.class))
         {
+            Greenfoot.playSound("slurp.wav");
             getWorld().removeObject(this);
         }
     
